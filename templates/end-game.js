@@ -1,9 +1,7 @@
-// Function to play the music when the page loads
-function playMusic() {
-    console.log("Hello")
-    const audio = document.getElementById('gameAudio'); // Access the audio element
-    audio.play();  // Play the audio
-}
+const startGameBtn = document.getElementById('startGameBtn');
+const gameAudio = document.getElementById('gameAudio');
 
-// Call the function to play music when the page loads
-window.onload = playMusic;
+// Trigger the sound on button click
+startGameBtn.addEventListener('click', () => {
+    gameAudio.play();  // Play sound when the user clicks "Start Game"
+});
