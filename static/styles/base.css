@@ -7,3 +7,40 @@
     --mft-background-one: #030303;
     --mft-background-two: #1e1e1e;
 }
+
+html,
+body {
+    background-color: var(--mft-background-two);
+    color: var(--mft-text-two);
+    font-family: Helvetica, sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.mft-header {
+    background-color: var(--mft-primary-brand);
+    display: grid;
+    grid: 80px / 30% auto 30%;
+    padding: 10px 20px;
+    align-items: center; /* vertically align items in header */
+    text-align: center;
+}
+
+.mft-logo {
+    height: 75px
+}
+
+.mft-header-button {
+    height: 30px;
+    border: none;
+    border-radius: 7px;
+}
+.mft-header-button a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--mft-text-header);
+    fill: var(--mft-text-header);
+    font-size: 15px;
+}
