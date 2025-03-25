@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over Screen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            color: #ff0077;
+            text-align: center;
+        }
+
+        /* Game Over Container */
+        .game-over-screen {
+            border: 4px solid cyan;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px cyan;
+            background-image: url("snakePhotoForEndGamePage.webp"); /* Replace with your image path */
+            background-size: cover; /* Makes sure the full image fills the box */
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 500px;
+            height: 90vh;
+            justify-content: space-between; /* Push content to top & bottom */
+        }
+
+        /* Game Over Title */
+        .game-over-text {
+            font-size: 3rem;
+            text-shadow: 0 0 10px red;
+            margin-top: 20px;
+        }
+
+        /* Score Container */
+        .stats-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Individual Score Styling */
+        .score-box {
+            background: #222;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px magenta;
+            font-size: 1.5rem;
+            width: 80%;
+            text-align: center;
+        }
+
+        /* Buttons Container */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-bottom: 20px; /* Keeps buttons inside container */
+        }
+
+        /* Button Styling */
+        .button {
+            background: #ff0077;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #ff0077;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #ff00ff;
+            box-shadow: 0 0 20px #ff00ff;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            .game-over-screen {
+                width: 90%;
+                height: auto;
+                padding-bottom: 50px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio Element with ID for JavaScript Control -->
+    <button id="startGameBtn">Start Game</button>
+
+    <audio id="gameAudio">
+        <source src="Parx and Rex - Cumbia Deli.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="game-over-screen">
+        <h1 class="game-over-text">GAME OVER</h1>
+        
+        <div class="stats-container">
+            <div class="score-box">Final Score: 200</div>
+            <div class="score-box">Best Score: 450</div>
+        </div>
+
+        <div class="buttons">
+            <button class="button">Restart</button>
+            <button class="button">View Score</button>
+            <button class="button">Play Again</button>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="./end-game.js"></script>
+</footer>
+</html>
