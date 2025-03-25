@@ -6,7 +6,7 @@ kanban-plugin: board
 
 ## Backlog
 
-- [ ] block of code
+- [ ] new text test
 
 
 ## Blocked
