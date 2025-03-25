@@ -6,7 +6,9 @@ kanban-plugin: board
 
 ## Backlog
 
-- [ ] new text test heebeejeebee
+- [ ] Main menu needed (OMER)
+- [ ] End Screen after death (SHAAN)
+- [ ] Borders to act as a death cause player to die (SHAAN)
 
 
 ## Blocked
