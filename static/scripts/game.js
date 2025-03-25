@@ -43,6 +43,10 @@ function loop() {
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);
 
+  context.strokeStyle = 'white'; // Border color
+  context.lineWidth = 5; // Border width
+  context.strokeRect(0, 0, canvas.width, canvas.height); // Draw the border
+
   // move snake by it's velocity
   snake.x += snake.dx;
   snake.y += snake.dy;
