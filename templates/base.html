@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/styles/base.css') }}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hungry Python - Official Cardiff University Game</title>
+
+{% block head %}
+<div class="mft-header">
+    <div class="mft-header-left">
+        <button class="mft-header-button"><a href="{{ url_for('frontPage') }}">Home</a></button>
+        <button class="mft-header-button"><a href="{{ url_for('frontPage') }}">Game</a></button>
+        <button class="mft-header-button"><a href="{{ url_for('frontPage') }}">About</a></button>
+    </div>
+    <div class="mft-header-middle">
+        <img id="mft-logo" class="mft-logo" src="{{ url_for('static', filename='') }}">
+    </div>
+    <div class="mft-header-right">
+        <button class="mft-header-button"><a href="{{ url_for('frontPage') }}">Contact</a></button>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+{% block footer %}
+<div class="mft-footer">
+    <h4>Copyright &#169 2025 - SN, MOA & MFT </h4>
+</div>
+{% endblock %}
