@@ -1,0 +1,48 @@
+/* mainMenu.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Background color of the page */
+    color: #fff; /* Text color */
+}
+
+.background-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background: url("https://media.tenor.com/nSGiQJHgbjkAAAAM/nokia-snake-game.gif"); /* Gradient background */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-header {
+    font-size: 3rem; /* Large title */
+    margin-bottom: 30px; /* Spacing below the title */
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center;
+    gap: 20px; /* Spacing between buttons */
+}
+
+.buttonDesign {
+    text-decoration: none; /* Remove underline */
+    background-color: #e63946; /* Button background color */
+    color: #fff; /* Text color */
+    padding: 15px 30px; /* Button size */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1.2rem; /* Font size */
+    transition: background-color 0.3s; /* Smooth color change on hover */
+}
+
+.buttonDesign:hover {
+    background-color: #f1faee; /* Hover effect */
+    color: #e63946; /* Text color on hover */
+}
