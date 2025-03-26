@@ -19,8 +19,8 @@ class GameGeneration {
       y: 320
     };
     this.bomb = {
-      x: 500,
-      y: 500,
+      x: this.getRandomInt(0, 25) * this.grid,
+      y: this.getRandomInt(0, 25) * this.grid
     }
   }
 
@@ -53,8 +53,10 @@ class GameGeneration {
 
     if (this.snake.cells.length > this.snake.maxCells) this.snake.cells.pop();
 
-    this.context.fillStyle = 'red';
+    this.context.fillStyle = 'yellow';
     this.context.fillRect(this.apple.x, this.apple.y, this.grid - 1, this.grid - 1);
+    this.context.fillStyle = 'red';
+    this.context.fillRect(this.bomb.x, this.bomb.y, this.grid - 1, this.grid - 1);
 
     this.context.fillStyle = 'green';
     this.snake.cells.forEach((cell, index) => {
@@ -65,11 +67,16 @@ class GameGeneration {
         this.apple.x = this.getRandomInt(0, 25) * this.grid;
         this.apple.y = this.getRandomInt(0, 25) * this.grid;
       }
+      if (cell.x === this.bomb.x && cell.y === this.bomb.y) {
+        this.snake.maxCells --;
+        this.bomb.x = this.getRandomInt(0, 25) * this.grid;
+        this.bomb.y = this.getRandomInt(0, 25) * this.grid;
+      }
+
 
       for (let i = index + 1; i < this.snake.cells.length; i++) {
         if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) {
-          this.resetGame();
-        }
+          this.resetGame();        }
       }
     });
   }
@@ -84,6 +91,8 @@ class GameGeneration {
 
     this.apple.x = this.getRandomInt(0, 25) * this.grid;
     this.apple.y = this.getRandomInt(0, 25) * this.grid;
+    this.bomb.x = this.getRandomInt(0, 25) * this.grid;
+    this.bomb.y = this.getRandomInt(0, 25) * this.grid;
   }
 }
 
