@@ -72,10 +72,13 @@ class GameGeneration {
         this.bomb.x = this.getRandomInt(0, 25) * this.grid;
         this.bomb.y = this.getRandomInt(0, 25) * this.grid;
       }
+      if(this.snake.maxCells < 4){
+          this.resetGame();
+        }
 
 
-      for (let i = index + 1; i < this.snake.cells.length; i++) {
-        if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) {
+        for (let i = index + 1; i < this.snake.cells.length; i++) {
+          if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) {
           this.resetGame();}
       }
     });
