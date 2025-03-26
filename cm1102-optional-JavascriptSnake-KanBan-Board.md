@@ -7,7 +7,6 @@ kanban-plugin: board
 ## Backlog
 
 - [ ] Logo needs changing to the snake logo. (CLARA)
-- [ ] All CSS needs to apply brand colours from 'bass.css'. (MARCUS)
 - [ ] Database logic needs adding to the 'app.py' file. (MARCUS)
 
 
@@ -18,6 +17,7 @@ kanban-plugin: board
 
 ## In Progress
 
+- [ ] All CSS needs to apply brand colours from 'bass.css'. (MARCUS)
 - [ ] ```java
 	BUG
 	```
@@ -34,6 +34,21 @@ kanban-plugin: board
 	
 	BUG WITH HEADER FOR SHAAN CODE - NEEDS FIXING
 - [ ] Borders to act as a death cause player to die (SHAAN)
+- [ ] ```java
+	METHOD
+	```
+	
+	Create a METHOD for Settings (OMER)
+- [ ] ```java
+	METHOD
+	```
+	
+	Create a METHOD for User Input (OMER)
+- [ ] ```java
+	METHOD
+	```
+	
+	Create a METHOD for Area Of Food (OMER)
 
 
 ## PR Ready
@@ -54,11 +69,11 @@ kanban-plugin: board
 	Dungeon theme.
 	Audio background (adventure music)
 	
-	Inspiration of Minecraft with blurred gif and black box for buttons.
+	Inspiration of Minecraft with blurred gif and black box for sg-buttons.
 	
 	Background or Box Item with Gif (temporarily use image)
 	
-	Two buttons. Play and how to play / guide. (below image in box)
+	Two sg-buttons. Play and how to play / guide. (below image in box)
 	
 	Console effect with controller for controls. (in guide).
 	
