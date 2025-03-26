@@ -6,7 +6,19 @@ import datetime
 app = Flask(__name__)
 
 @app.route('/')
-def frontPage():
+def indexPage():
+    return render_template('index.html')
+
+@app.route('/credits')
+def creditsPage():
+    return render_template('credits.html')
+
+@app.route('/end')
+def endPage():
+    return render_template('end-game.html')
+
+@app.route('/snake')
+def snakePage():
     return render_template('game.html')
 
 
