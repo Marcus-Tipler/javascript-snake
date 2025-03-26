@@ -17,7 +17,6 @@ kanban-plugin: board
 
 ## In Progress
 
-- [ ] All CSS needs to apply brand colours from 'bass.css'. (MARCUS)
 - [ ] ```java
 	BUG
 	```
@@ -28,11 +27,6 @@ kanban-plugin: board
 	```
 	
 	ALL LINKS NEED UPDATING WITH PAGES IN 'base.html' FOR FUTURE PAGES
-- [ ] ```java
-	BUG
-	```
-	
-	BUG WITH HEADER FOR SHAAN CODE - NEEDS FIXING
 - [ ] Borders to act as a death cause player to die (SHAAN)
 - [ ] ```java
 	METHOD
@@ -49,11 +43,6 @@ kanban-plugin: board
 	```
 	
 	Create a METHOD for Area Of Food (OMER)
-- [ ] ```java
-	{CSS}
-	```
-	
-	Change cyan for Color2, change red, #e63946 and #ff0077 for Color3, change magenta and #ff00ff for Color4, #222 for background one, #fff, #f1faee for text one. (MARCUS)
 
 
 ## PR Ready
@@ -63,6 +52,17 @@ kanban-plugin: board
 ## Done
 
 **Complete**
+- [x] ```java
+	BUG = (fixed)
+	```
+	
+	BUG WITH HEADER FOR SHAAN CODE - NEEDS FIXING
+- [x] All CSS needs to apply brand colours from 'bass.css'. (MARCUS)
+- [x] ```java
+	{CSS}
+	```
+	
+	Change cyan for Color2, change red, #e63946 and #ff0077 for Color3, change magenta and #ff00ff for Color4, #222 for background one, #fff, #f1faee for text one. (MARCUS)
 - [x] 'end-game.js' needs moving to Static Folder and needs its accompanying changes in html file. (MARCUS)
 - [x] Music file needs its location changing to Static Audio folder. (MARCUS)
 - [x] Change location of 'MainMenu.css' to the Static Folder with it's accompanying changes. (MARCUS)
