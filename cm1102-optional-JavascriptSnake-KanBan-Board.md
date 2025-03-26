@@ -7,7 +7,6 @@ kanban-plugin: board
 ## Backlog
 
 - [ ] Logo needs changing to the snake logo. (CLARA)
-- [ ] All CSS needs to apply brand colours from 'bass.css'. (MARCUS)
 - [ ] Database logic needs adding to the 'app.py' file. (MARCUS)
 
 
@@ -18,6 +17,7 @@ kanban-plugin: board
 
 ## In Progress
 
+- [ ] All CSS needs to apply brand colours from 'bass.css'. (MARCUS)
 - [ ] ```java
 	BUG
 	```

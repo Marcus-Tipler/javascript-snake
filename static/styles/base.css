@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+
 :root {
     --mft-primary-brand: #EB5B00;
     --mft-secondary-brand: #c84e02;
@@ -12,7 +14,7 @@ html,
 body {
     background-color: var(--mft-background-two);
     color: var(--mft-text-two);
-    font-family: Helvetica, sans-serif;
+    font-family: 'New Rocker', normal;
     height: 100%;
     margin: 0;
     overflow: hidden;
