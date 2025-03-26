@@ -18,30 +18,35 @@ kanban-plugin: board
 
 ## In Progress
 
-- [ ] ```error
+- [ ] ```java
 	BUG
 	```
 	
 	Need BACKGROUND IMAGE links in CSS to be replaced in HTML
-- [ ] ```error
+- [ ] ```java
 	BUG
 	```
 	
 	ALL LINKS NEED UPDATING WITH PAGES IN 'base.html' FOR FUTURE PAGES
+- [ ] ```java
+	BUG
+	```
+	
+	BUG WITH HEADER FOR SHAAN CODE - NEEDS FIXING
 - [ ] Borders to act as a death cause player to die (SHAAN)
 
 
 ## PR Ready
 
-- [ ] All HTML files need new logic for the Flask Framework (MARCUS)
-- [ ] Change location of 'MainMenu.css' to the Static Folder with it's accompanying changes. (MARCUS)
-- [ ] Music file needs its location changing to Static Audio folder. (MARCUS)
-- [ ] 'end-game.js' needs moving to Static Folder and needs its accompanying changes in html file. (MARCUS)
 
 
 ## Done
 
 **Complete**
+- [x] 'end-game.js' needs moving to Static Folder and needs its accompanying changes in html file. (MARCUS)
+- [x] Music file needs its location changing to Static Audio folder. (MARCUS)
+- [x] Change location of 'MainMenu.css' to the Static Folder with it's accompanying changes. (MARCUS)
+- [x] All HTML files need new logic for the Flask Framework (MARCUS)
 - [x] End Screen after death (SHAAN)
 - [x] Main menu needed 
 	
