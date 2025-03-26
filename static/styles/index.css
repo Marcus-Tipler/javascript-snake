@@ -1,4 +1,4 @@
-.background-1 {
+.sg-background-1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,19 +9,19 @@
     background-repeat: no-repeat;
 }
 
-.main-header {
+.sg-main-header {
     font-size: 3rem; /* Large title */
     margin-bottom: 30px; /* Spacing below the title */
 }
 
-.buttonBox {
+.sg-buttonBox {
     display: flex;
     flex-direction: column; /* Arrange items vertically */
     align-items: center;
-    gap: 20px; /* Spacing between buttons */
+    gap: 20px; /* Spacing between sg-buttons */
 }
 
-.buttonDesign {
+.sg-buttonDesign {
     text-decoration: none; /* Remove underline */
     background-color: #e63946; /* Button background color */
     color: #fff; /* Text color */
@@ -31,7 +31,7 @@
     transition: background-color 0.3s; /* Smooth color change on hover */
 }
 
-.buttonDesign:hover {
+.sg-buttonDesign:hover {
     background-color: #f1faee; /* Hover effect */
     color: #e63946; /* Text color on hover */
 }
