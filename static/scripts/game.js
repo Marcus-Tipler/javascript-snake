@@ -87,6 +87,7 @@ class GameGeneration {
 
   resetGame() {
     alert("Game Over!");
+    alert("Good job")
     this.snake.x = 160;
     this.snake.y = 160;
     this.snake.cells = [];
