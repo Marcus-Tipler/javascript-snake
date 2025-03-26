@@ -19,7 +19,10 @@ class GameGeneration {
       x: this.getRandomInt(1, 24) * this.grid,
       y: this.getRandomInt(1, 24) * this.grid
     };
-
+    this.bomb = {
+      x: this.getRandomInt(0, 25) * this.grid,
+      y: this.getRandomInt(0, 25) * this.grid
+    }
     this.gameOver = false;
   }
 
@@ -62,10 +65,10 @@ class GameGeneration {
     this.snake.cells.unshift({ x: this.snake.x, y: this.snake.y });
 
     if (this.snake.cells.length > this.snake.maxCells) this.snake.cells.pop();
-
-    // Draw apple
-    this.context.fillStyle = 'red';
+    this.context.fillStyle = 'yellow';
     this.context.fillRect(this.apple.x, this.apple.y, this.grid - 1, this.grid - 1);
+    this.context.fillStyle = 'red';
+    this.context.fillRect(this.bomb.x, this.bomb.y, this.grid - 1, this.grid - 1);
 
     // Draw snake
     this.context.fillStyle = 'green';
@@ -78,15 +81,22 @@ class GameGeneration {
         this.apple.x = this.getRandomInt(1, 24) * this.grid;
         this.apple.y = this.getRandomInt(1, 24) * this.grid;
       }
+      if (cell.x === this.bomb.x && cell.y === this.bomb.y) {
+        this.snake.maxCells --;
+        this.bomb.x = this.getRandomInt(0, 25) * this.grid;
+        this.bomb.y = this.getRandomInt(0, 25) * this.grid;
+      }
+
 
       // Check self-collision
       for (let i = index + 1; i < this.snake.cells.length; i++) {
-        if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) {
+        if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) 
+        {
           this.displayGameOver();
           return;
         }
       }
-    });
+    );
   }
 
   displayGameOver() {
@@ -104,9 +114,10 @@ class GameGeneration {
     this.snake.maxCells = 4;
     this.snake.dx = this.grid;
     this.snake.dy = 0;
-    this.apple.x = this.getRandomInt(1, 24) * this.grid;
-    this.apple.y = this.getRandomInt(1, 24) * this.grid;
-    this.loop();
+    this.apple.x = this.getRandomInt(0, 25) * this.grid;
+    this.apple.y = this.getRandomInt(0, 25) * this.grid;
+    this.bomb.x = this.getRandomInt(0, 25) * this.grid;
+    this.bomb.y = this.getRandomInt(0, 25) * this.grid;
   }
 }
 
