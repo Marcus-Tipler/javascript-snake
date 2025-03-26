@@ -49,6 +49,11 @@ kanban-plugin: board
 	```
 	
 	Create a METHOD for Area Of Food (OMER)
+- [ ] ```java
+	{CSS}
+	```
+	
+	Change cyan for Color2, change red, #e63946 and #ff0077 for Color3, change magenta and #ff00ff for Color4, #222 for background one, #fff, #f1faee for text one. (MARCUS)
 
 
 ## PR Ready
