@@ -1,26 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+
 :root {
-    --mft-primary-brand: #EB5B00;
-    --mft-secondary-brand: #c84e02;
-    --mft-text-one: #ffffff;
-    --mft-text-two: #F1F1F1;
-    --mft-text-header: #1e1e1e;
-    --mft-background-one: #030303;
-    --mft-background-two: #1e1e1e;
+    --sg-color-one: #B17F59;
+    --sg-color-two: #A5B68D;
+    --sg-color-three: #C1CFA1;
+    --sg-color-four: #EDE8DC;
+    --sg-text-one: #ffffff;
+    --sg-text-two: #F1F1F1;
+    --sg-text-header: #1e1e1e;
+    --sg-background-one: #030303;
+    --sg-background-two: #1e1e1e;
 }
 
 html,
 body {
-    background-color: var(--mft-background-two);
-    color: var(--mft-text-two);
-    font-family: Helvetica, sans-serif;
+    background-color: var(--sg-background-two);
+    color: var(--sg-text-two);
+    font-family: New Rocker, normal;
     height: 100%;
     margin: 0;
     overflow: hidden;
     overflow-y: scroll;
 }
 
-.mft-header {
-    background-color: var(--mft-primary-brand);
+.sg-header {
+    background-color: var(--sg-color-one);
     display: grid;
     grid: 80px / 30% auto 30%;
     padding: 10px 20px;
@@ -28,19 +32,19 @@ body {
     text-align: center;
 }
 
-.mft-logo {
+.sg-logo {
     height: 75px
 }
 
-.mft-header-button {
+.sg-header-button {
     height: 30px;
     border: none;
     border-radius: 7px;
 }
-.mft-header-button a {
+.sg-header-button a {
     text-decoration: none;
     font-weight: bold;
-    color: var(--mft-text-header);
-    fill: var(--mft-text-header);
+    color: var(--sg-text-header);
+    fill: var(--sg-text-header);
     font-size: 15px;
 }

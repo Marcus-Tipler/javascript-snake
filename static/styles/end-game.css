@@ -1,23 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-        
-body {
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    color: #ff0077;
-    text-align: center;
-}
-
 /* Game Over Container */
-.game-over-screen {
-    border: 4px solid cyan;
+.sg-game-over-screen {
+    border: 4px solid var(--sg-color-two);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 20px cyan;
+    box-shadow: 0 0 20px var(--sg-color-two);
     background-image: url(""); /* FIXME: Replace with your image path */
     background-size: cover; /* Makes sure the full image fills the box */
     background-position: center;
@@ -32,14 +18,14 @@ body {
 }
 
 /* Game Over Title */
-.game-over-text {
+.sg-game-over-text {
     font-size: 3rem;
-    text-shadow: 0 0 10px red;
+    text-shadow: 0 0 10px var(--sg-color-three);
     margin-top: 20px;
 }
 
 /* Score Container */
-.stats-container {
+.sg-stats-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -48,50 +34,50 @@ body {
 }
 
 /* Individual Score Styling */
-.score-box {
-    background: #222;
+.sg-score-box {
+    background: var(--sg-background-one);
     padding: 10px 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px magenta;
+    box-shadow: 0 0 10px var(--sg-color-four);
     font-size: 1.5rem;
     width: 80%;
     text-align: center;
 }
 
-/* Buttons Container */
-.buttons {
+/* sg-buttons Container */
+.sg-buttons {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    margin-bottom: 20px; /* Keeps buttons inside container */
+    margin-bottom: 20px; /* Keeps sg-buttons inside container */
 }
 
 /* Button Styling */
 .button {
-    background: #ff0077;
+    background: var(--sg-color-three);
     border: none;
     padding: 12px 24px;
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 0 10px #ff0077;
+    box-shadow: 0 0 10px var(--sg-color-three);
     transition: 0.3s;
 }
 
 .button:hover {
-    background: #ff00ff;
-    box-shadow: 0 0 20px #ff00ff;
+    background: var(--sg-color-four);
+    box-shadow: 0 0 20px var(--sg-color-four);
 }
 
 /* Responsive Design */
 @media screen and (max-width: 600px) {
-    .game-over-screen {
+    .sg-game-over-screen {
         width: 90%;
         height: auto;
         padding-bottom: 50px;
     }
 
-    .buttons {
+    .sg-buttons {
         flex-direction: column;
         gap: 10px;
         align-items: center;
