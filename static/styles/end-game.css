@@ -1,9 +1,9 @@
 /* Game Over Container */
 .sg-game-over-screen {
-    border: 4px solid cyan;
+    border: 4px solid var(--sg-color-two);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 20px cyan;
+    box-shadow: 0 0 20px var(--sg-color-two);
     background-image: url(""); /* FIXME: Replace with your image path */
     background-size: cover; /* Makes sure the full image fills the box */
     background-position: center;
@@ -20,7 +20,7 @@
 /* Game Over Title */
 .sg-game-over-text {
     font-size: 3rem;
-    text-shadow: 0 0 10px red;
+    text-shadow: 0 0 10px var(--sg-color-three);
     margin-top: 20px;
 }
 
@@ -35,10 +35,10 @@
 
 /* Individual Score Styling */
 .sg-score-box {
-    background: #222;
+    background: var(--sg-background-one);
     padding: 10px 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px magenta;
+    box-shadow: 0 0 10px var(--sg-color-four);
     font-size: 1.5rem;
     width: 80%;
     text-align: center;
@@ -54,19 +54,19 @@
 
 /* Button Styling */
 .button {
-    background: #ff0077;
+    background: var(--sg-color-three);
     border: none;
     padding: 12px 24px;
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 0 10px #ff0077;
+    box-shadow: 0 0 10px var(--sg-color-three);
     transition: 0.3s;
 }
 
 .button:hover {
-    background: #ff00ff;
-    box-shadow: 0 0 20px #ff00ff;
+    background: var(--sg-color-four);
+    box-shadow: 0 0 20px var(--sg-color-four);
 }
 
 /* Responsive Design */

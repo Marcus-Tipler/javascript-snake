@@ -23,8 +23,8 @@
 
 .sg-buttonDesign {
     text-decoration: none; /* Remove underline */
-    background-color: #e63946; /* Button background color */
-    color: #fff; /* Text color */
+    background-color: var(--sg-color-three); /* Button background color */
+    color: var(--sg-text-one); /* Text color */
     padding: 15px 30px; /* Button size */
     border-radius: 8px; /* Rounded corners */
     font-size: 1.2rem; /* Font size */
@@ -32,6 +32,6 @@
 }
 
 .sg-buttonDesign:hover {
-    background-color: #f1faee; /* Hover effect */
-    color: #e63946; /* Text color on hover */
+    background-color: var(--sg-text-two); /* Hover effect */
+    color: var(--sg-color-three); /* Text color on hover */
 }
