@@ -6,15 +6,17 @@
 
 <title>Hungry Python - Official Cardiff University Game</title>
 
+{% block styles %}{% endblock %}
+
 {% block head %}
 <div class="mft-header">
     <div class="mft-header-left">
-        <button class="mft-header-button"><a href="{{ url_for('frontPage') }}">Home</a></button>
-        <button class="mft-header-button"><a href="{{ url_for('frontPage') }}">Guide</a></button>
-        <button class="mft-header-button"><a href="{{ url_for('frontPage') }}">Settings</a></button>
+        <button class="mft-header-button"><a href="{{ url_for('indexPage') }}">Home</a></button>
+        <button class="mft-header-button"><a href="#">Guide</a></button> <!-- FIXME: change link value --> 
+        <button class="mft-header-button"><a href="#">Settings</a></button> <!-- FIXME: change link value --> 
     </div>
     <div class="mft-header-middle">
-        <img id="mft-logo" class="mft-logo" src="{{ url_for('static', filename='images/logo-inverted.png') }}"/>
+        <img id="mft-logo" class="mft-logo" src="{{ url_for('static', filename='images/logo-inverted.png') }}"/> <!-- FIXME: image change --> 
     </div>
 </div>
 {% endblock %}
