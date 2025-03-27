@@ -13,14 +13,21 @@
 }
 
 html,
+.imgCont{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 250vh;
+    height:90vh;
+}
 body {
     background-color: var(--sg-background-two);
     color: var(--sg-text-two);
     font-family: New Rocker, normal;
     height: 100%;
-    margin: 0;
-    overflow: hidden;
-    overflow-y: scroll;
+    margin: 10;
+    /* overflow: hidden;
+    overflow-y: scroll; */
 }
 
 .sg-header {
