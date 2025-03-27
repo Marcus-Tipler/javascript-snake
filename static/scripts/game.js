@@ -5,7 +5,7 @@ class GameGeneration {
     var startTime, endTime;
     this.grid = 16;
     this.count = 0;
-    this.speed = 5;
+    this.speed = 40;
     this.score = 0;  // Initializing the score counter
     this.startTime = Date.now();
     this.gameScore = 0;
@@ -75,12 +75,13 @@ class GameGeneration {
         this.apple.y = this.getRandomInt(0, 25) * this.grid;
       }
       else if (cell.x === this.bomb.x && cell.y === this.bomb.y) {
-        this.snake.maxCells = Math.max(1, this.snake.maxCells - 1);
-        while (this.snake.cells.length > this.snake.maxCells) {
-          this.snake.cells.pop();
-        }
-        this.bomb.x = this.getRandomInt(0, 25) * this.grid;
-        this.bomb.y = this.getRandomInt(0, 25) * this.grid;
+        // this.snake.maxCells = Math.max(1, this.snake.maxCells - 1);
+        // while (this.snake.cells.length > this.snake.maxCells) {
+        //   this.snake.cells.pop();
+        // }
+        // this.bomb.x = this.getRandomInt(0, 25) * this.grid;
+        // this.bomb.y = this.getRandomInt(0, 25) * this.grid;
+        this.decideImg();
       }
       if(this.snake.maxCells < 4){
           this.displayGameOver();
@@ -169,6 +170,12 @@ class UserInput extends GameGeneration {
       this.finalScore = this.snake.maxCells * 10;
       return this.finalScore;
   }
+  decideImg(){
+    var imgNumb = this.getRandomInt(0, 3);
+    // var imgNumb = 0
+    window.location.href = `/scarePic?imgNum=${imgNumb}`;  
+  }
+  
 
   start() {
     //this.beginningTime();

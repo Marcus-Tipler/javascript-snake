@@ -32,10 +32,10 @@ def end_game():
     
     return render_template("end-game.html", final_score=final_score, apples=apples)
 
-@app.route('/scarePic')
+@app.route('/scarePic', methods=['GET', 'POST'])
 def jumpPictures():
-
-    return  render_template('pictures.html')
+    imageNumber = request.args.get('imgNum', default = 0, type=int)
+    return render_template('jumpscare.html', imgNumb = imageNumber)
 
 
 if __name__ == '__main__':

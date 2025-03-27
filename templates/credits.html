@@ -7,7 +7,34 @@
 
 {% block content %}
 
-INPUT YOUR CODE HERE OMER
+    <!-- Audio Element with ID for JavaScript Control -->
+
+    <audio id="gameAudio">
+        <source src="{{ url_for('static', filename='audio/end-game.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="sg-game-over-screen">
+        <h1 class="sg-game-over-text">CREDITS</h1>
+        
+        <div class="sg-stats-container">
+            <!-- Use the final_score and best_score variables passed from Flask -->
+            <div class="sg-score-box" id="finalScore">
+                <h2>DEVELOPERS:</h2>
+                <ul> Muhammad Omer Azhar</ul>
+                <ul>Marcus Francis Tipler</ul>
+                <ul>Shaan Nagar</ul>
+                <ul>Nicholas Sayer</ul>
+                <ul>Hsu Hsu Zin Naing</ul>
+            </div>
+        <div class = "sg-stats-container" >
+            <h2>EXTERNAL SOURCES:</h2>
+            <ul>Educative.io. (n.d.). JavaScript Snake Game Tutorial. Available at: https://www.educative.io/blog/javascript-snake-game-tutorial [Accessed 27 March 2025].</ul>
+            <ul>https://gist.github.com/straker/ff00b4b49669ad3dec890306d348adc4</ul>
+            <ul>https://gist.github.com/straker/ff00b4b49669ad3dec890306d348adc4?permalink_comment_id=4755377</ul>
+        </div>
+        </div>
+    </div>
 
 {% endblock %}
 
