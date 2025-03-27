@@ -48,7 +48,7 @@ kanban-plugin: board
 	index.html / index.css
 	```
 	
-	1. Center the elements.
+	1. Center the elements. Prevent the scrolling and make the game look like the Minecraft Launcher does
 	2. Make black box for game buttons
 	3. Add logo to above of box.
 	4. Add falling elements to make the main screen more interactive.
