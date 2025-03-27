@@ -5,7 +5,7 @@ class GameGeneration {
     var startTime, endTime;
     this.grid = 16;
     this.count = 0;
-    this.speed = 10;
+    this.speed = 22;
     this.score = 0;  // Initializing the score counter
     this.startTime = Date.now();
     this.gameScore = 0;
