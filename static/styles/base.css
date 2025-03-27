@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
 
 :root {
-    --sg-color-one: #B17F59;
-    --sg-color-two: #A5B68D;
-    --sg-color-three: #C1CFA1;
-    --sg-color-four: #EDE8DC;
+    --sg-color-one: #18230F; /* headers */
+    --sg-color-two: #27391C;
+    --sg-color-three: #1F7D53; /* buttons */
+    --sg-color-four: #255F38;
     --sg-text-one: #ffffff;
     --sg-text-two: #F1F1F1;
     --sg-text-header: #1e1e1e;
@@ -47,4 +47,8 @@ body {
     color: var(--sg-text-header);
     fill: var(--sg-text-header);
     font-size: 15px;
+}
+
+.sg-footer {
+    text-align: center;
 }

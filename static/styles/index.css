@@ -20,11 +20,8 @@ canvas { /* FIXME: NEEDS MOVING THE GAME.CSS */
 }
 
 .sg-main-header {
-    width: 15%;
-    height: 50%;
+    height: 35%;
     top: 0;
-    transform: translateY(10%);
-    background: #0fa;
 }
 
 .sg-buttonBox {
@@ -33,7 +30,7 @@ canvas { /* FIXME: NEEDS MOVING THE GAME.CSS */
     align-items: center;
     gap: 20px; /* Spacing between sg-buttons */
     background-color: black;
-    padding: 30px 70px;
+    padding: 8px;
     border-radius: 8px;
 }
 
