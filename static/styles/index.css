@@ -1,4 +1,4 @@
-canvas {
+canvas { /* FIXME: NEEDS MOVING THE GAME.CSS */
     height: 80vh;
     width: 90vh;
     background-image: url(https://png.pngtree.com/background/20250201/original/pngtree-cartoon-style-stone-tile-texture-picture-image_15273693.jpg);
@@ -20,8 +20,11 @@ canvas {
 }
 
 .sg-main-header {
-    font-size: 3rem; /* Large title */
-    margin-bottom: 30px; /* Spacing below the title */
+    width: 15%;
+    height: 50%;
+    top: 0;
+    transform: translateY(10%);
+    background: #0fa;
 }
 
 .sg-buttonBox {
@@ -29,6 +32,9 @@ canvas {
     flex-direction: column; /* Arrange items vertically */
     align-items: center;
     gap: 20px; /* Spacing between sg-buttons */
+    background-color: black;
+    padding: 30px 70px;
+    border-radius: 8px;
 }
 
 .sg-buttonDesign {
