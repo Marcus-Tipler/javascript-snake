@@ -111,14 +111,14 @@ class GameGeneration {
     this.context.fillText('Game Over', this.canvas.width / 2 - 80, this.canvas.height / 2);
     const endTime = Date.now();
     const elapsedTimeMs = endTime - this.startTime;
-    //const elapsedHrs = elapsedTimeMs.getHours();
     // Convert milliseconds to seconds (or format as needed)
     const elapsedTimeSec = Math.floor(elapsedTimeMs / 1000);
-    //this.timePassed();
     this.gameScore  = this.endGameScore();
     //console.log(elapsedTimeSec)
-    window.location.href = "/end?score=" + this.gameScore; 
-  }
+     window.location.href = `/end?final_score=${this.gameScore}&apples=${this.score}`;  
+
+
+     }
 
   resetGame() {
     this.snake.x = 160;
@@ -166,7 +166,7 @@ class UserInput extends GameGeneration {
     });
   }
   endGameScore(){
-      this.finalScore = this.snake.maxCells + 10;
+      this.finalScore = this.snake.maxCells * 10;
       return this.finalScore;
   }
 

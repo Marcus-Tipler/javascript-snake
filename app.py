@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect, make_response, session, g
-from flask_wtf import FlaskForm
+from flask import Flask, render_template, request
 import os
 import datetime
 
@@ -21,14 +20,23 @@ def snakePage():
 def end_game():
     if request.method == "POST":
         data = request.get_json()
-        final_score = data.get("score", 0)
-        print("DEBUG final_score from POST:", final_score)
-        return ("", 204)  # or some JSON response
+        # For POST, both values should be sent in the JSON body.
+        final_score = data.get("final_score", 0)
+        apples = data.get("apples", 0)
+        # Optionally process/store these values before sending a response.
+        return ("", 204)  # No content response for POST requests
+      
+    # For GET, both values should be passed as query parameters.
+    final_score = request.args.get("final_score", 0)
+    apples = request.args.get("apples", 0)
+    
+    return render_template("end-game.html", final_score=final_score, apples=apples)
 
-    # If GET
-    final_score = request.args.get("score", 0)
-    print("DEBUG final_score from GET:", final_score)
-    return render_template("end-game.html", final_score=final_score, best_score=0)
+@app.route('/scarePic')
+def jumpPictures():
+
+    return  render_template('pictures.html')
+
 
 if __name__ == '__main__':
-	app.run(debug=True,host='0.0.0.0',port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
