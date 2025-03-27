@@ -2,12 +2,14 @@ class GameGeneration {
   constructor() {
     this.canvas = document.getElementById('game');
     this.context = this.canvas.getContext('2d');
-    var score = 0;    //This will be the value that will be passed further to print score possibly in another html file.
     var startTime, endTime;
     this.grid = 16;
     this.count = 0;
     this.speed = 5;
     this.score = 0;  // Initializing the score counter
+    this.startTime = Date.now();
+    this.gameScore = 0;
+    this.finalScore = 0;
 
     this.snake = {
       x: 160,
@@ -31,18 +33,7 @@ class GameGeneration {
   getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
-  beginningTime(){
-    startTime = Date.now();
-  }
-  timePassed(){
-    endTime = new Date.now();
-    var elapsedTime = endTime - startTime;
-    var elapsedInSeconds = elapsedTime.getSeconds();    //use these values in the 
-    var elapsedInMinutes = endTime.getMinutes();
-    var elapsedInHours = endTime.getHours();
 
-
-  }
 
   loop() {
     requestAnimationFrame(() => this.loop());
@@ -109,7 +100,7 @@ class GameGeneration {
   displayScore() {
     this.context.fillStyle = 'white';
     this.context.font = '20px Arial';
-    this.context.fillText('Score: ' + this.score, 10, 30);
+    this.context.fillText('Apples Eaten: ' + this.score, 10, 30);
   }
 
   displayGameOver() {
@@ -118,9 +109,15 @@ class GameGeneration {
     this.context.fillStyle = 'white';
     this.context.font = '30px Arial';
     this.context.fillText('Game Over', this.canvas.width / 2 - 80, this.canvas.height / 2);
-    
-   
-    window.location.href = "/end?score=" + this.score; 
+    const endTime = Date.now();
+    const elapsedTimeMs = endTime - this.startTime;
+    //const elapsedHrs = elapsedTimeMs.getHours();
+    // Convert milliseconds to seconds (or format as needed)
+    const elapsedTimeSec = Math.floor(elapsedTimeMs / 1000);
+    //this.timePassed();
+    this.gameScore  = this.endGameScore();
+    //console.log(elapsedTimeSec)
+    window.location.href = "/end?score=" + this.gameScore; 
   }
 
   resetGame() {
@@ -169,10 +166,12 @@ class UserInput extends GameGeneration {
     });
   }
   endGameScore(){
-      score = this.snake.maxCells * 10;
+      this.finalScore = this.snake.maxCells + 10;
+      return this.finalScore;
   }
 
   start() {
+    //this.beginningTime();
     this.arrowInput();
     this.loop();
   }
