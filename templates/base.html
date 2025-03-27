@@ -11,9 +11,8 @@
 {% block head %}
 <div class="sg-header">
     <div class="sg-header-left">
-        <button class="sg-header-button"><a href="{{ url_for('indexPage') }}">Home</a></button>
-        <button class="sg-header-button"><a href="#">Guide</a></button> <!-- FIXME: change link value --> 
-        <button class="sg-header-button"><a href="#">Settings</a></button> <!-- FIXME: change link value --> 
+        <button class="sg-header-button"><a href="{{ url_for('indexPage') }}">Main Menu</a></button>
+        <button class="sg-header-button"><a href="{{ url_for('creditsPage') }}">Credits</a></button> <!-- FIXME: change link value -->
     </div>
     <div class="sg-header-middle">
         <img id="sg-logo" class="sg-logo" src="{{ url_for('static', filename='images/logo-inverted.png') }}"/> <!-- FIXME: image change --> 
@@ -27,6 +26,6 @@
 
 {% block footer %}
 <div class="sg-footer">
-    <h4>Copyright &#169 2025 - HHZN, SN, MOA & MFT - (NOT SPONSORED BY NOKIA)</h4>
+    <h4>Copyright &#169 2025 - HHZN, NS, SN, MOA & MFT - (NOT SPONSORED BY NOKIA)</h4>
 </div>
 {% endblock %}
