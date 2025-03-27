@@ -100,13 +100,13 @@ class GameGeneration {
   }
 
   displayGameOver() {
-    console.log('Reached displayGameOver')
+    
     this.gameOver = true;
     this.context.fillStyle = 'white';
     this.context.font = '30px Arial';
     this.context.fillText('Game Over', this.canvas.width / 2 - 80, this.canvas.height / 2);
     
-    console.log('Final score is:', this.score);
+   
     window.location.href = "/end?score=" + this.score; 
   }
 
