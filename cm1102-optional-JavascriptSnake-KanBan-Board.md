@@ -38,18 +38,20 @@ kanban-plugin: board
 	2. Move elements from `index.css to game.css 
 	3. Change background image
 	(Marcus)
-- [ ] Content needs adding to credits.html and respective CSS changes need to be made (Marcus)
 - [ ] New background GIF for home screen (Marcus)
+- [ ] Adding buttons to Jumpscare and data parsing and CSS changes for jumpscare (OMER)
+- [ ] Audio handling for Jumpscare (SHAAN)
 
 
 ## PR Ready
 
-- [ ] Logo needs changing to the snake logo. (NICHOLAS)
+- [ ] Logo needs changing to the snake logo. (NICHOLAS + CLARA)
 
 
 ## Done
 
 **Complete**
+- [x] Content needs adding to credits.html and respective CSS changes need to be made (OMER)
 - [x] ```java
 	index.html / index.css
 	```
