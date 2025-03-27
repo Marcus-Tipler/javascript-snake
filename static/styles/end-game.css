@@ -1,4 +1,10 @@
 /* Game Over Container */
+
+.sg-game-over-screen-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .sg-game-over-screen {
     border: 4px solid var(--sg-color-two);
     padding: 20px;
@@ -8,7 +14,7 @@
     background-size: cover; /* Makes sure the full image fills the box */
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
+    display: inherit;
     flex-direction: column;
     align-items: center;
     width: 80%;
