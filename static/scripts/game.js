@@ -2,6 +2,8 @@ class GameGeneration {
   constructor() {
     this.canvas = document.getElementById('game');
     this.context = this.canvas.getContext('2d');
+    var score = 0;    //This will be the value that will be passed further to print score possibly in another html file.
+    var startTime, endTime;
     this.grid = 16;
     this.count = 0;
     this.speed = 40;   //this value decides the speed of the snake, we need to link flask inputs to this value, e.g, hard difficulty would put a lower value here. the lower this value, the faster the snake. It is used in the loop function below
@@ -28,6 +30,18 @@ class GameGeneration {
 
   getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
+  }
+  beginningTime(){
+    startTime = Date.now();
+  }
+  timePassed(){
+    endTime = new Date.now();
+    var elapsedTime = endTime - startTime;
+    var elapsedInSeconds = elapsedTime.getSeconds();    //use these values in the 
+    var elapsedInMinutes = endTime.getMinutes();
+    var elapsedInHours = endTime.getHours();
+
+
   }
 
   loop() {
@@ -132,6 +146,9 @@ class UserInput extends GameGeneration {
         this.snake.dx = 0;
       }
     });
+  }
+  endGameScore(){
+      score = this.snake.maxCells * 10;
   }
 
   
