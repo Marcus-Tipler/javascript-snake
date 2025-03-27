@@ -30,12 +30,6 @@ kanban-plugin: board
 
 ## In Progress
 
-- [ ] Logo needs changing to the snake logo. (NICHOLAS)
-- [ ] ```java
-	end-game.html / end-game.css
-	```
-	
-	Center the elements. (Marcus)
 - [ ] ```java
 	game.html / game.css
 	```
@@ -44,7 +38,19 @@ kanban-plugin: board
 	2. Move elements from `index.css to game.css 
 	3. Change background image
 	(Marcus)
-- [ ] ```java
+- [ ] Content needs adding to credits.html and respective CSS changes need to be made (Marcus)
+- [ ] New background GIF for home screen (Marcus)
+
+
+## PR Ready
+
+- [ ] Logo needs changing to the snake logo. (NICHOLAS)
+
+
+## Done
+
+**Complete**
+- [x] ```java
 	index.html / index.css
 	```
 	
@@ -53,17 +59,11 @@ kanban-plugin: board
 	3. Add logo to above of box.
 	4. Add falling elements to make the main screen more interactive.
 	(Marcus)
-- [ ] Content needs adding to credits.html and respective CSS changes need to be made (Marcus)
-- [ ] New background GIF for home screen (Marcus)
-
-
-## PR Ready
-
-
-
-## Done
-
-**Complete**
+- [x] ```java
+	end-game.html / end-game.css
+	```
+	
+	Center the elements. (Marcus)
 - [x] Borders to act as a death cause player to die (SHAAN)
 - [x] ```java
 	METHOD
