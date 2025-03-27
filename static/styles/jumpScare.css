@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+
+:root {
+    --sg-color-one: #18230F; /* headers */
+    --sg-color-two: #27391C;
+    --sg-color-three: #1F7D53; /* buttons */
+    --sg-color-four: #255F38;
+    --sg-text-one: #ffffff;
+    --sg-text-two: #F1F1F1;
+    --sg-text-header: #1e1e1e;
+    --sg-background-one: #030303;
+    --sg-background-two: #1e1e1e;
+}
+
+html,
+body {
+    background-color: var(--sg-background-two);
+    color: var(--sg-text-two);
+    font-family: New Rocker, normal;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.sg-header {
+    background-color: var(--sg-color-one);
+    display: grid;
+    grid: 80px / 30% auto 30%;
+    padding: 10px 20px;
+    align-items: center; /* vertically align items in header */
+    text-align: center;
+}
+
+.sg-logo {
+    height: 75px
+}
+
+.sg-header-button {
+    height: 80px;
+    width: 100px;
+    border: none;
+    border-radius: 7px;
+}
+.sg-header-button a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--sg-text-one);
+    fill: var(--sg-text-one);
+    font-size: 15px;
+}
+.sg-header-button:enabled {
+    background: var(--sg-color-three);
+}
+.sg-header-button:hover {
+    background: var(--sg-color-two);
+}
+
+.sg-footer {
+    text-align: center;
+}
