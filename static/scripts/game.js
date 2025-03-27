@@ -4,6 +4,8 @@ class GameGeneration {
     this.context = this.canvas.getContext('2d');
     this.grid = 16;
     this.count = 0;
+    this.speed = 40;   //this value decides the speed of the snake, we need to link flask inputs to this value, e.g, hard difficulty would put a lower value here. the lower this value, the faster the snake. It is used in the loop function below
+    let running = false;
 
     this.snake = {
       x: 160,
@@ -15,8 +17,8 @@ class GameGeneration {
     };
 
     this.apple = {
-      x: 320,
-      y: 320
+      x: 160,
+      y: 160
     };
     this.bomb = {
       x: this.getRandomInt(0, 25) * this.grid,
@@ -31,7 +33,7 @@ class GameGeneration {
   loop() {
     requestAnimationFrame(() => this.loop());
 
-    if (++this.count < 4) return;
+    if (++this.count < this.speed) return;
 
     this.count = 0;
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -42,16 +44,19 @@ class GameGeneration {
 
     this.snake.x += this.snake.dx;
     this.snake.y += this.snake.dy;
+    this.hasGameEnded();
 
-    if (this.snake.x < 0) this.snake.x = this.canvas.width - this.grid;
-    else if (this.snake.x >= this.canvas.width) this.snake.x = 0;
+    // if (this.snake.x < 0) this.snake.x = this.canvas.width - this.grid;
+    // else if (this.snake.x >= this.canvas.width) this.snake.x = 0;
 
-    if (this.snake.y < 0) this.snake.y = this.canvas.height - this.grid;
-    else if (this.snake.y >= this.canvas.height) this.snake.y = 0;
+    // if (this.snake.y < 0) this.snake.y = this.canvas.height - this.grid;
+    // else if (this.snake.y >= this.canvas.height) this.snake.y = 0;                //temporarily removed this wrapping logic inorder to apply border death to game
 
     this.snake.cells.unshift({ x: this.snake.x, y: this.snake.y });
 
-    if (this.snake.cells.length > this.snake.maxCells) this.snake.cells.pop();
+    if (this.snake.cells.length > this.snake.maxCells){
+      this.snake.cells.pop();
+    }
 
     this.context.fillStyle = 'yellow';
     this.context.fillRect(this.apple.x, this.apple.y, this.grid - 1, this.grid - 1);
@@ -68,7 +73,10 @@ class GameGeneration {
         this.apple.y = this.getRandomInt(0, 25) * this.grid;
       }
       else if (cell.x === this.bomb.x && cell.y === this.bomb.y) {
-        this.snake.maxCells--;
+        this.snake.maxCells = Math.max(1, this.snake.maxCells - 1);
+        while (this.snake.cells.length > this.snake.maxCells) {
+          this.snake.cells.pop();
+      }
         this.bomb.x = this.getRandomInt(0, 25) * this.grid;
         this.bomb.y = this.getRandomInt(0, 25) * this.grid;
       }
@@ -117,15 +125,48 @@ class UserInput extends GameGeneration {
       }
     });
   }
+  // Border(){
+  //   const hitLeftWall = cell.x < 0;
+  //   const hitRightWall = cell.x >= this.canvas.width;
+  //   const hitTopWall = cell.y < 0;
+  //   const hitBottomWall = cell.y >= this.canvas.height;
+    
+  //   switch(true){
+  //     case(hitLeftWall):
+  //       this.resetGame();
+  //       running = false;
+  //       break;
+  //     case(hitRightWall):
+  //       this.resetGame();
+  //       running = false;
 
+  //     case(hitTopWall):
+  //       this.resetGame();
+  //       running = false;
+  //       break;
+  //     case(hitBottomWall):
+  //       this.resetGame();
+  //       running = false;
+  //       break;
+  //     }
+
+  
   hasGameEnded() {
     const hitLeftWall = this.snake.x < 0;
     const hitRightWall = this.snake.x >= this.canvas.width;
     const hitTopWall = this.snake.y < 0;
     const hitBottomWall = this.snake.y >= this.canvas.height;
+    
 
-    return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
+    if(hitLeftWall || hitRightWall || hitTopWall || hitBottomWall){
+      this.resetGame();
+    }
   }
+  // SnakeSpeedDecision(){
+  //   if(DiffInput === easy){
+  //     this.speed = 
+  //   }
+  // }
 
   start() {
     this.arrowInput();
