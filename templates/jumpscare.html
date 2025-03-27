@@ -16,6 +16,13 @@
                 <source src="{{ url_for('static', filename='audio/jumpscare-94984.mp3') }}" type="audio/mpeg">  
                 Your browser does not support the audio element.
             </audio>
+          
+            <script>
+              function playAudio() {
+              var audio = document.getElementById("gameAudio");
+              audio.play();
+              }
+            </script>
         </div>
         <div class="sg-js-button">
             <button class="sg-header-button"><a href="{{ url_for('indexPage') }}">CLICK TO CONTINUE</a></button>
