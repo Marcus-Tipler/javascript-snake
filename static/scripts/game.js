@@ -92,6 +92,14 @@ class GameGeneration {
     });
   }
 
+  displayGameOver() {
+    this.gameOver = true;
+    this.context.fillStyle = 'white';
+    this.context.font = '30px Arial';
+    this.context.fillText('Game Over', this.canvas.width / 2 - 80, this.canvas.height / 2);
+    window.location.href = 'end';
+  }
+
   resetGame() {
     this.snake.x = 160;
     this.snake.y = 160;
@@ -125,30 +133,6 @@ class UserInput extends GameGeneration {
       }
     });
   }
-  // Border(){
-  //   const hitLeftWall = cell.x < 0;
-  //   const hitRightWall = cell.x >= this.canvas.width;
-  //   const hitTopWall = cell.y < 0;
-  //   const hitBottomWall = cell.y >= this.canvas.height;
-    
-  //   switch(true){
-  //     case(hitLeftWall):
-  //       this.resetGame();
-  //       running = false;
-  //       break;
-  //     case(hitRightWall):
-  //       this.resetGame();
-  //       running = false;
-
-  //     case(hitTopWall):
-  //       this.resetGame();
-  //       running = false;
-  //       break;
-  //     case(hitBottomWall):
-  //       this.resetGame();
-  //       running = false;
-  //       break;
-  //     }
 
   
   hasGameEnded() {
@@ -159,7 +143,7 @@ class UserInput extends GameGeneration {
     
 
     if(hitLeftWall || hitRightWall || hitTopWall || hitBottomWall){
-      this.resetGame();
+      this.displayGameOver();
     }
   }
   // SnakeSpeedDecision(){

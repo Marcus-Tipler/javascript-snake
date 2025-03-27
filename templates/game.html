@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+{% endblock %}
+
 {% block content %}
 <canvas width="400" height="400" id="game"></canvas>
 {% endblock %}

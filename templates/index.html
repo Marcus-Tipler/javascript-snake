@@ -9,9 +9,13 @@
 <div class="sg-background-1">
     <h1 class="sg-main-header">Snake Game</h1>
     <div class = "sg-buttonBox">
-            <a class ="sg-buttonDesign"> PLAY </a>
+            <a class="sg-buttonDesign" href="snake"> PLAY </a>
             <a class = "sg-buttonDesign" href="#"> SETTINGS </a>
             <a class = "sg-buttonDesign" href="{{ url_for('creditsPage') }}"> Credits </a>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/index.js') }}"></script>
 {% endblock %}
