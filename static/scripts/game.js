@@ -94,6 +94,7 @@ class GameGeneration {
     this.context.fillStyle = 'white';
     this.context.font = '30px Arial';
     this.context.fillText('Game Over', this.canvas.width / 2 - 80, this.canvas.height / 2);
+    window.location.href = 'end';
   }
 
   resetGame() {

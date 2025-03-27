@@ -6,10 +6,11 @@
 
 
 {% block content %}
+<script src="./index.js"></script>
 <div class="sg-background-1">
     <h1 class="sg-main-header">Snake Game</h1>
     <div class = "sg-buttonBox">
-            <a class ="sg-buttonDesign"> PLAY </a>
+            <a class="sg-buttonDesign" href="playGame"> PLAY </a>
             <a class = "sg-buttonDesign" href="#"> SETTINGS </a>
             <a class = "sg-buttonDesign" href="{{ url_for('creditsPage') }}"> Credits </a>
     </div>
