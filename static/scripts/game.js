@@ -4,8 +4,8 @@ class GameGeneration {
     this.context = this.canvas.getContext('2d');
     this.grid = 16;
     this.count = 0;
-    this.speed = 40;   //this value decides the speed of the snake, we need to link flask inputs to this value, e.g, hard difficulty would put a lower value here. the lower this value, the faster the snake. It is used in the loop function below
-    let running = false;
+    this.speed = 5;
+    this.score = 0;  // Initializing the score counter
 
     this.snake = {
       x: 160,
@@ -46,20 +46,16 @@ class GameGeneration {
     this.snake.y += this.snake.dy;
     this.hasGameEnded();
 
-    // if (this.snake.x < 0) this.snake.x = this.canvas.width - this.grid;
-    // else if (this.snake.x >= this.canvas.width) this.snake.x = 0;
-
-    // if (this.snake.y < 0) this.snake.y = this.canvas.height - this.grid;
-    // else if (this.snake.y >= this.canvas.height) this.snake.y = 0;                //temporarily removed this wrapping logic inorder to apply border death to game
-
     this.snake.cells.unshift({ x: this.snake.x, y: this.snake.y });
 
-    if (this.snake.cells.length > this.snake.maxCells){
+    if (this.snake.cells.length > this.snake.maxCells) {
       this.snake.cells.pop();
     }
 
+    // Draw the apple and bomb
     this.context.fillStyle = 'yellow';
     this.context.fillRect(this.apple.x, this.apple.y, this.grid - 1, this.grid - 1);
+
     this.context.fillStyle = 'red';
     this.context.fillRect(this.bomb.x, this.bomb.y, this.grid - 1, this.grid - 1);
 
@@ -69,6 +65,7 @@ class GameGeneration {
 
       if (cell.x === this.apple.x && cell.y === this.apple.y) {
         this.snake.maxCells++;
+        this.score++;  // Increment the score each time the snake eats an apple
         this.apple.x = this.getRandomInt(0, 25) * this.grid;
         this.apple.y = this.getRandomInt(0, 25) * this.grid;
       }
@@ -76,28 +73,41 @@ class GameGeneration {
         this.snake.maxCells = Math.max(1, this.snake.maxCells - 1);
         while (this.snake.cells.length > this.snake.maxCells) {
           this.snake.cells.pop();
-      }
+        }
         this.bomb.x = this.getRandomInt(0, 25) * this.grid;
         this.bomb.y = this.getRandomInt(0, 25) * this.grid;
       }
-      if(this.snake.maxCells < 4){
-          this.resetGame();
+
+      if (this.snake.maxCells < 4) {
+        this.resetGame();
+      }
+
+      for (let i = index + 1; i < this.snake.cells.length; i++) {
+        if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) {
+          this.displayGameOver();
         }
-
-
-        for (let i = index + 1; i < this.snake.cells.length; i++) {
-          if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) {
-          this.resetGame();}
       }
     });
+
+    this.displayScore();  // Display the current score
+  }
+
+  // Display score in the top-left corner
+  displayScore() {
+    this.context.fillStyle = 'white';
+    this.context.font = '20px Arial';
+    this.context.fillText('Score: ' + this.score, 10, 30);
   }
 
   displayGameOver() {
+    console.log('Reached displayGameOver')
     this.gameOver = true;
     this.context.fillStyle = 'white';
     this.context.font = '30px Arial';
     this.context.fillText('Game Over', this.canvas.width / 2 - 80, this.canvas.height / 2);
-    window.location.href = 'end';
+    
+    console.log('Final score is:', this.score);
+    window.location.href = "/end?score=" + this.score; 
   }
 
   resetGame() {
@@ -112,6 +122,18 @@ class GameGeneration {
     this.apple.y = this.getRandomInt(0, 25) * this.grid;
     this.bomb.x = this.getRandomInt(0, 25) * this.grid;
     this.bomb.y = this.getRandomInt(0, 25) * this.grid;
+  }
+
+  hasGameEnded() {
+    const hitLeftWall = this.snake.x < 0;
+    const hitRightWall = this.snake.x >= this.canvas.width;
+    const hitTopWall = this.snake.y < 0;
+    const hitBottomWall = this.snake.y >= this.canvas.height;
+    
+
+    if(hitLeftWall || hitRightWall || hitTopWall || hitBottomWall){
+      this.displayGameOver();
+    }
   }
 }
 
@@ -133,24 +155,6 @@ class UserInput extends GameGeneration {
       }
     });
   }
-
-  
-  hasGameEnded() {
-    const hitLeftWall = this.snake.x < 0;
-    const hitRightWall = this.snake.x >= this.canvas.width;
-    const hitTopWall = this.snake.y < 0;
-    const hitBottomWall = this.snake.y >= this.canvas.height;
-    
-
-    if(hitLeftWall || hitRightWall || hitTopWall || hitBottomWall){
-      this.displayGameOver();
-    }
-  }
-  // SnakeSpeedDecision(){
-  //   if(DiffInput === easy){
-  //     this.speed = 
-  //   }
-  // }
 
   start() {
     this.arrowInput();
