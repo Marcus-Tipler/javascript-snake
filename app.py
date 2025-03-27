@@ -29,6 +29,7 @@ def end_game():
     # For GET, both values should be passed as query parameters.
     final_score = request.args.get("final_score", 0)
     apples = request.args.get("apples", 0)
+    
     return render_template("end-game.html", final_score=final_score, apples=apples)
 
 if __name__ == '__main__':

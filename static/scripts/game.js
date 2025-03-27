@@ -115,7 +115,8 @@ class GameGeneration {
     const elapsedTimeSec = Math.floor(elapsedTimeMs / 1000);
     this.gameScore  = this.endGameScore();
     //console.log(elapsedTimeSec)
-    window.location.href = `/end?gameScore=${this.gameScore}&apples=${this.score}`;  
+    console.log(`Final Game Score: ${this.gameScore}, Apples Eaten: ${this.score}`);
+    window.location.href = `/end?final_score=${this.gameScore}&apples=${this.score}`;  
   }
 
   resetGame() {
