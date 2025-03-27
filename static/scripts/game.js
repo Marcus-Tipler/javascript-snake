@@ -115,13 +115,8 @@ class GameGeneration {
     const elapsedTimeSec = Math.floor(elapsedTimeMs / 1000);
     this.gameScore  = this.endGameScore();
     //console.log(elapsedTimeSec)
-    console.log(`Final Game Score: ${this.gameScore}, Apples Eaten: ${this.score}`);
-    
-    
+     window.location.href = `/end?final_score=${this.gameScore}&apples=${this.score}`;  
 
-
-    setTimeout(()=>{ window.location.href = `/end?final_score=${this.gameScore}&apples=${this.score}`;  
-  }, 3000)
 
      }
 
@@ -171,7 +166,7 @@ class UserInput extends GameGeneration {
     });
   }
   endGameScore(){
-      this.finalScore = this.snake.maxCells + 10;
+      this.finalScore = this.snake.maxCells * 10;
       return this.finalScore;
   }
 

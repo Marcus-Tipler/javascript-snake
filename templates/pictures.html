@@ -7,7 +7,6 @@
 </head>
 <body>
 
-  <h1>Conditional Image Example</h1>
 
   <!-- This is where the image will be displayed -->
   <img id="imageDisplay" alt="Image will be displayed here" style="width: 300px; height: 200px;">
@@ -20,17 +19,18 @@
 
       var imageSrc;
       if (randomChoice === 0) {
-        imageSrc = "image1.jpg";
+        imageSrc = "javascript-snakes/static/images/IMG_0266.jpeg";
       } else if (randomChoice === 1) {
-        imageSrc = "image2.jpg";
+        imageSrc = "javascript-snakes/static/images/IMG_0270.jpeg";
       } else if (randomChoice === 2) {
-        imageSrc = "image3.jpg";
+        imageSrc = "javascript-snakes/static/images/IMG_0273.jpeg";
       } else {
-        imageSrc = "image4.jpg";
+        imageSrc = "javascript-snakes/static/images/IMG_0274.jpeg";
       }
 
-      // Set the chosen image source to the img element
-      document.getElementById("imageDisplay").src = imageSrc;
+      var imageElement = document.getElementById("imageDisplay");
+      imageElement.src = imageSrc;
+      imageElement.alt = "Random image"; // Optional: Set alt text to describe the image
     }
 
     // Call the function to display an image when the page loads
