@@ -6,43 +6,55 @@ kanban-plugin: board
 
 ## Backlog
 
-- [ ] Logo needs changing to the snake logo. (CLARA)
-- [ ] Database logic needs adding to the 'app.py' file. (MARCUS)
 
 
 ## Blocked
 
+- [ ] Database logic needs adding to the 'app.py' file. (MARCUS)
 - [ ] 'snakePhotoorEndGame.png' needs moving to Static Image Folder. (MARCUS)
 
 
-## In Progress
+## ```java<br>BUGS<br>```
 
-- [ ] ```java
-	BUG
-	```
-	
-	Need BACKGROUND IMAGE links in CSS to be replaced in HTML
 - [ ] ```java
 	BUG
 	```
 	
 	ALL LINKS NEED UPDATING WITH PAGES IN 'base.html' FOR FUTURE PAGES
-- [ ] Borders to act as a death cause player to die (SHAAN)
 - [ ] ```java
-	METHOD
+	BUG
 	```
 	
-	Create a METHOD for Settings (OMER)
+	Need BACKGROUND IMAGE links in CSS to be replaced in HTML
+
+
+## In Progress
+
+- [ ] Logo needs changing to the snake logo. (NICHOLAS)
 - [ ] ```java
-	METHOD
+	end-game.html / end-game.css
 	```
 	
-	Create a METHOD for User Input (OMER)
+	Center the elements. (Marcus)
 - [ ] ```java
-	METHOD
+	game.html / game.css
 	```
 	
-	Create a METHOD for Area Of Food (OMER)
+	1. Center the elements.
+	2. Move elements from `index.css to game.css 
+	3. Change background image
+	(Marcus)
+- [ ] ```java
+	index.html / index.css
+	```
+	
+	1. Center the elements.
+	2. Make black box for game buttons
+	3. Add logo to above of box.
+	4. Add falling elements to make the main screen more interactive.
+	(Marcus)
+- [ ] Content needs adding to credits.html and respective CSS changes need to be made (Marcus)
+- [ ] New background GIF for home screen (Marcus)
 
 
 ## PR Ready
@@ -52,6 +64,22 @@ kanban-plugin: board
 ## Done
 
 **Complete**
+- [x] Borders to act as a death cause player to die (SHAAN)
+- [x] ```java
+	METHOD
+	```
+	
+	Create a METHOD for Area Of Food (OMER)
+- [x] ```java
+	METHOD
+	```
+	
+	Create a METHOD for User Input (OMER)
+- [x] ```java
+	METHOD
+	```
+	
+	Create a METHOD for Settings (OMER)
 - [x] ```java
 	BUG = (fixed)
 	```
@@ -93,6 +121,6 @@ kanban-plugin: board
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false]}
 ```
 %%
