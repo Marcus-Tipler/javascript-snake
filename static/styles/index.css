@@ -15,7 +15,7 @@ canvas { /* FIXME: NEEDS MOVING THE GAME.CSS */
     align-items: center;
     justify-content: center;
     height: 100vh; /* Full viewport height */
-    background: url("https://media.tenor.com/nSGiQJHgbjkAAAAM/nokia-snake-game.gif"); /* Gradient background */
+    background: url(../images/index.gif); /* Gradient background */
     background-size: cover;
     background-repeat: no-repeat;
 }

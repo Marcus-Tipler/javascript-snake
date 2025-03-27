@@ -10,7 +10,7 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 20px var(--sg-color-two);
-    background-image: url(""); /* FIXME: Replace with your image path */
+    background-image: url(../images/index.gif); /* FIXME: Replace with your image path */
     background-size: cover; /* Makes sure the full image fills the box */
     background-position: center;
     background-repeat: no-repeat;
