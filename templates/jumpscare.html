@@ -9,10 +9,19 @@
     
     Your browser does not support the audio element.
 </audio>
+<button onclick="playAudio()">Play Jumpscare Sound</button>
+
 <!-- <div class="sg-header"> -->
     <div class="sg-header-left">
         <button class="sg-header-button"><a href="{{ url_for('indexPage') }}">CLICK TO CONTINUE</a></button>
     </div>
 <!-- </div> -->
 </div>
+
+<script>
+    function playAudio() {
+        var audio = document.getElementById("gameAudio");
+        audio.play();
+    }
+</script>
 </body>
