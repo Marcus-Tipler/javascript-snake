@@ -1,27 +1,33 @@
+{% extends "base.html" %}
+
+{% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/jumpScare.css') }}">
-<body>
-<div class = imgCont>
-    <img id="imageDisplay" src="{{ url_for('static', filename='images/img-' + imgNumb|string + '.jpeg') }}" alt="Image will be displayed here" style=" height: 100vh; width: 150vh;">
+{% endblock %}
 
+{% block head %}{% endblock %}
 
-<audio id="gameAudio">
-    <source src="{{ url_for('static', filename='audio/jumpscare-94984.mp3') }}" type="audio/mpeg">  
-    
-    Your browser does not support the audio element.
-</audio>
-<button onclick="playAudio()">Play Jumpscare Sound</button>
-
-<!-- <div class="sg-header"> -->
-    <div class="sg-header-left">
-        <button class="sg-header-button"><a href="{{ url_for('indexPage') }}">CLICK TO CONTINUE</a></button>
+{% block content %}
+    <div class="sg-js-container">
+        <div class="sg-js-img">
+            <img id="imageDisplay" src="{{ url_for('static', filename='images/img-' + imgNumb|string + '.jpeg') }}" alt="Image will be displayed here" style=" height: 100vh; width: 150vh;">
+        </div>
+        <div class="sg-js-audio">
+            <audio id="gameAudio">
+                <source src="{{ url_for('static', filename='audio/jumpscare-94984.mp3') }}" type="audio/mpeg">  
+                Your browser does not support the audio element.
+            </audio>
+          
+            <script>
+              function playAudio() {
+              var audio = document.getElementById("gameAudio");
+              audio.play();
+              }
+            </script>
+        </div>
+        <div class="sg-js-button">
+            <button class="sg-header-button"><a href="{{ url_for('indexPage') }}">CLICK TO CONTINUE</a></button>
+        </div>
     </div>
-<!-- </div> -->
-</div>
+{% endblock %}
 
-<script>
-    function playAudio() {
-        var audio = document.getElementById("gameAudio");
-        audio.play();
-    }
-</script>
-</body>
+{% block footer %}{% endblock %}
