@@ -10,5 +10,11 @@ html, body {
     justify-content: center;
   }
   canvas {
+    height: 80vh;
+    width: 90vh;
+    background-image: url(https://png.pngtree.com/background/20250201/original/pngtree-cartoon-style-stone-tile-texture-picture-image_15273693.jpg);
+    background-repeat: no-repeat;
     border: 1px solid white;
+    /* height: 80vh;
+    width: 90vh; */
   }
