@@ -16,7 +16,7 @@
                 <source src="{{ url_for('static', filename='audio/jumpscare-94984.mp3') }}" type="audio/mpeg">  
                 Your browser does not support the audio element.
             </audio>
-          
+            <button onclick="playAudio()">Play Audio</button>  <!-- Button to play the audio -->
             <script>
               function playAudio() {
               var audio = document.getElementById("gameAudio");
