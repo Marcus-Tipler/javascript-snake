@@ -32,5 +32,11 @@ def end_game():
     
     return render_template("end-game.html", final_score=final_score, apples=apples)
 
+@app.route('/scarePic')
+def jumpPictures():
+
+    return  render_template('pictures.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

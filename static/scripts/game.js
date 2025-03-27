@@ -116,8 +116,14 @@ class GameGeneration {
     this.gameScore  = this.endGameScore();
     //console.log(elapsedTimeSec)
     console.log(`Final Game Score: ${this.gameScore}, Apples Eaten: ${this.score}`);
-    window.location.href = `/end?final_score=${this.gameScore}&apples=${this.score}`;  
-  }
+    
+    
+
+
+    setTimeout(()=>{ window.location.href = `/end?final_score=${this.gameScore}&apples=${this.score}`;  
+  }, 3000)
+
+     }
 
   resetGame() {
     this.snake.x = 160;
