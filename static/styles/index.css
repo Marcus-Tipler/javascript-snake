@@ -1,8 +1,9 @@
 canvas { /* FIXME: NEEDS MOVING THE GAME.CSS */
     height: 80vh;
     width: 90vh;
-    background-image: url('https://png.pngtree.com/background/20250201/original/pngtree-cartoon-style-stone-tile-texture-picture-image_15273693.jpg');
+    background-image: url(../images/stone.jpeg);
     background-repeat: no-repeat;
+    background-size:cover;
     border: 1px solid white;
     /* height: 80vh;
     width: 90vh; */
