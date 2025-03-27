@@ -107,6 +107,7 @@ class GameGeneration {
     this.apple.x = this.getRandomInt(1, 24) * this.grid;
     this.apple.y = this.getRandomInt(1, 24) * this.grid;
     this.loop();
+    window.location.href = 'end-game.html';
   }
 }
 
