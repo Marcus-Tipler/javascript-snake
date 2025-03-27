@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+{% block styles %}
+{% endblock %}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Hungry Python - Official Cardiff University Game</title>
-
-{% block styles %}{% endblock %}
 
 {% block head %}
 <div class="sg-header">
