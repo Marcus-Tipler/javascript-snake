@@ -2,6 +2,8 @@ class GameGeneration {
   constructor() {
     this.canvas = document.getElementById('game');
     this.context = this.canvas.getContext('2d');
+    var score = 0;    //This will be the value that will be passed further to print score possibly in another html file.
+    var startTime, endTime;
     this.grid = 16;
     this.count = 0;
     this.speed = 5;
@@ -28,6 +30,18 @@ class GameGeneration {
 
   getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
+  }
+  beginningTime(){
+    startTime = Date.now();
+  }
+  timePassed(){
+    endTime = new Date.now();
+    var elapsedTime = endTime - startTime;
+    var elapsedInSeconds = elapsedTime.getSeconds();    //use these values in the 
+    var elapsedInMinutes = endTime.getMinutes();
+    var elapsedInHours = endTime.getHours();
+
+
   }
 
   loop() {
@@ -77,13 +91,12 @@ class GameGeneration {
         this.bomb.x = this.getRandomInt(0, 25) * this.grid;
         this.bomb.y = this.getRandomInt(0, 25) * this.grid;
       }
+      if(this.snake.maxCells < 4){
+          this.displayGameOver();
+        }
 
-      if (this.snake.maxCells < 4) {
-        this.resetGame();
-      }
-
-      for (let i = index + 1; i < this.snake.cells.length; i++) {
-        if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) {
+        for (let i = index + 1; i < this.snake.cells.length; i++) {
+          if (cell.x === this.snake.cells[i].x && cell.y === this.snake.cells[i].y) {
           this.displayGameOver();
         }
       }
@@ -154,6 +167,9 @@ class UserInput extends GameGeneration {
         this.snake.dx = 0;
       }
     });
+  }
+  endGameScore(){
+      score = this.snake.maxCells * 10;
   }
 
   start() {
